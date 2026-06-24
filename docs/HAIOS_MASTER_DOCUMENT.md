@@ -322,3 +322,136 @@ Facilitar la expansión del ecosistema
 Acelerar la creación de productos digitales
 Crear una economía interna basada en módulos
 Horizons convierte a HAIOS en un ecosistema extensible, colaborativo y escalable.
+4. Runtime, Eventos y Ciclo de Vida
+La arquitectura operacional de HAIOS.
+El runtime no contiene inteligencia ni gobernanza: simplemente orquesta el flujo cognitivo completo, desde la ingesta de un evento hasta la evolución de los agentes.
+4.1 Runtime Cognitivo
+El runtime tiene tres responsabilidades fundamentales:
+Recepción de eventos
+NATS
+HTTP API
+Webhooks
+CRM / ERP
+Usuario / Agente
+Coordinación de subsistemas
+MACL
+IAI
+CGL
+Execution
+State Engine
+CML
+SOE
+AMS
+Foresight
+EIL
+Observabilidad
+decision_id
+trace_id
+risk_score
+value_score
+execution_result
+4.2 Ciclo de Vida de un Evento
+Todo comienza con un evento. Diez fases lo transforman en acción, memoria y evolución.
+Ejemplo de evento entrante:
+Code
+{
+  "id": "evt_001",
+  "type": "lead_created",
+  "domain": "sales",
+  "payload": { "leadScore": 92 }
+}
+Fases del ciclo:
+Ingesta — EVENT RECEIVED  
+Validación de esquema, autenticación, timestamp y dominio.
+Enriquecimiento — CONTEXT  
+Consulta CML, Knowledge Graph y System State para generar el Context Bundle.
+MACL — REASONING  
+Produce MACLDecision: status, confidence, requiredAuthority, reasoning, expectedImpact.
+IAI Value Model — VALUE  
+Calcula valueScore, transformationScore, leverageScore y dependencyRisk.
+CGL — GOVERNANCE  
+Evalúa Safety, Integrity, Authority, Identity y Risk → veredicto.
+Execution — ACTION  
+Ejecuta, modifica, escala a humano o finaliza según el veredicto.
+Persistencia — PERSIST  
+Guarda DecisionLog, EventLog, Ledger y SystemState.
+Aprendizaje — LEARN  
+CML registra evento, decisión, resultado, ROI, riesgo e impacto.
+Optimización — OPTIMIZE  
+SOE detecta patrones e ineficiencias → genera OptimizationProposal.
+Evolución — EVOLVE  
+AMS evalúa performance y puede promover, fusionar, mutar o retirar agentes.
+Veredictos posibles de CGL:  
+APPROVE · MODIFY · ESCALATE · REJECT
+4.3 Sistema de Autoridad (DAS)
+Controla quién puede hacer qué.
+Siete niveles basados en impacto histórico, ROI, errores, riesgo y confianza.
+L0 — Observer  
+Solo lectura.
+L1 — Operator  
+Acciones simples.
+L2 — Specialist  
+Tareas de dominio.
+L3 — Manager  
+Modificar pipeline CRM, coordinar agentes.
+L4 — Executive  
+Decisiones estratégicas.
+L5 — Governor  
+Cambios en la economía interna.
+L6 — Constitutional  
+Modificar políticas y la constitución cognitiva.
+4.4 Economy Engine
+Asigna incentivos internos.
+Mayor ROI desbloquea más autoridad, créditos y prioridad.
+Fórmula:
+Code
+Value Generated
+− Resource Cost
+= Net Cognitive Value
+Métricas:
+credits · earnings · spending · efficiency · valueGenerated
+4.5 Mutación Evolutiva (AMS)
+AMS evita el estancamiento.
+Analiza performance, autoridad, economía e historia para reconfigurar la población de agentes.
+Entradas:  
+Performance · Authority · Economy · History
+Salidas:  
+Strategy Update · Role Promotion · Role Merge · Role Retirement
+Siempre validado por CGL.
+4.6 Foresight Runtime
+Antes de optimizar, SOE consulta a Foresight.
+Simula tres escenarios y cinco métricas.
+Escenarios:  
+Best Case · Expected Case · Worst Case
+Métricas:  
+ROI · Risk · Stability · Adoption · Complexity
+4.7 Memoria Cognitiva (CML)
+Cuatro tipos de memoria permiten aprender, recordar, comparar y evolucionar.
+Episódica — Eventos
+Procedimental — Playbooks
+Estratégica — Patrones
+Institucional — Políticas
+4.8 Knowledge Graph Runtime
+El grafo se consulta en tiempo real para decisiones coherentes y explicables.
+Ejemplos de consultas:
+«¿Qué principios aplican?»
+Value Transformation
+Critical Thinking
+IA Leverage
+4.9 Capa de Seguridad Operacional
+Todo evento genera identificadores de traza.
+Todo es auditable, explicable, reversible y versionado.
+trace_id
+audit_id
+decision_id
+4.10 Resultado del Bloque 4
+Runtime cognitivo definido
+Ciclo de vida de eventos
+Sistema de autoridad
+Motor económico
+Mutación evolutiva
+Foresight Runtime
+Memoria cognitiva
+Knowledge Graph Runtime
+Auditoría
+Seguridad operacional
