@@ -690,3 +690,114 @@ Aprenda de resultados
 Optimice procesos
 Evolucione agentes
 Como un sistema vivo.
+4. Runtime, Eventos y Ciclo de Vida
+El runtime cognitivo de HAIOS coordina el flujo completo de operación del sistema. No contiene inteligencia propia: su función es orquestar cómo los módulos cognitivos procesan eventos, toman decisiones, ejecutan acciones y evolucionan agentes.
+4.1 Runtime Cognitivo
+El runtime cumple tres funciones principales:
+Recepción de eventos
+NATS
+HTTP API
+Webhooks
+CRM / ERP
+Usuario / Agente
+Coordinación de subsistemas
+MACL
+IAI
+CGL
+Execution
+State Engine
+CML
+SOE
+AMS
+Foresight
+EIL
+Observabilidad
+decision_id
+trace_id
+risk_score
+value_score
+execution_result
+4.2 Ciclo de Vida de un Evento
+Cada evento atraviesa diez fases que lo transforman en acción, memoria y evolución.
+Ejemplo de evento:
+Code
+{
+  "id": "evt_001",
+  "type": "lead_created",
+  "domain": "sales",
+  "payload": { "leadScore": 92 }
+}
+Fases del ciclo:
+Ingesta
+Validación de esquema, autenticación, timestamp y dominio.
+Enriquecimiento
+Consulta CML, Knowledge Graph y System State para generar el Context Bundle.
+MACL
+Genera MACLDecision: reasoning, confidence, expectedImpact, requiredAuthority.
+IAI Value Model
+Calcula valueScore, transformationScore, leverageScore y dependencyRisk.
+CGL
+Evalúa seguridad, integridad, autoridad, identidad y riesgo.
+Execution
+Ejecuta, modifica, escala a humano o finaliza según el veredicto.
+Persistencia
+Guarda DecisionLog, EventLog, Ledger y SystemState.
+Aprendizaje
+CML registra evento, decisión, resultado, ROI, riesgo e impacto.
+Optimización
+SOE detecta patrones e ineficiencias y genera OptimizationProposal.
+Evolución
+AMS evalúa performance y puede promover, fusionar, mutar o retirar agentes.
+Veredictos posibles de CGL:  
+APPROVE · MODIFY · ESCALATE · REJECT
+4.3 Sistema de Autoridad (DAS)
+Define quién puede ejecutar qué acciones dentro del sistema.
+Niveles:
+L0 Observer
+L1 Operator
+L2 Specialist
+L3 Manager
+L4 Executive
+L5 Governor
+L6 Constitutional
+4.4 Economy Engine
+Asigna incentivos internos y calcula el valor neto generado por cada acción.
+Code
+Value Generated
+− Resource Cost
+= Net Cognitive Value
+Métricas: credits, earnings, spending, efficiency, valueGenerated.
+4.5 Mutación Evolutiva (AMS)
+AMS reconfigura la población de agentes según:
+Entradas: performance, authority, economy, history
+Salidas: strategy update, role promotion, role merge, role retirement
+Siempre validado por CGL.
+4.6 Foresight Runtime
+Simula escenarios antes de ejecutar optimizaciones.
+Escenarios: Best Case, Expected Case, Worst Case
+Métricas: ROI, Risk, Stability, Adoption, Complexity
+4.7 Memoria Cognitiva (CML)
+Cuatro tipos de memoria:
+Episódica (eventos)
+Procedimental (playbooks)
+Estratégica (patrones)
+Institucional (políticas)
+4.8 Knowledge Graph Runtime
+El grafo se consulta en tiempo real para decisiones coherentes y explicables.
+4.9 Capa de Seguridad Operacional
+Todo evento genera identificadores de traza:
+trace_id
+audit_id
+decision_id
+Todo es auditable, explicable, reversible y versionado.
+4.10 Resultado del Bloque 4
+Runtime cognitivo definido
+Ciclo de vida de eventos
+Sistema de autoridad
+Motor económico
+Mutación evolutiva
+Foresight Runtime
+Memoria cognitiva
+Knowledge Graph Runtime
+Auditoría
+Seguridad operacional
