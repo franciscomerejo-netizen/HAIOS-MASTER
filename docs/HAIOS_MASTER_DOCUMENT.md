@@ -383,3 +383,149 @@ Actúa (procesos)
 Recuerda (datos)
 Evoluciona (aprendizaje)
 Esto lo convierte en una plataforma capaz de operar negocios digitales de forma autónoma.
+04-modulos-del-ecosistema.md
+4. Módulos Principales del Ecosistema HAIOS
+4.1 Visión General
+El ecosistema HAIOS está compuesto por un conjunto de módulos diseñados para operar de forma:
+Integrada
+Autónoma
+Escalable
+Cognitiva
+Cada módulo cumple una función específica dentro del sistema operativo digital y se comunica con los demás mediante eventos, APIs, mensajería y memoria cognitiva.
+Los módulos principales son:
+HAIOS Core
+HAIOS Apps
+HAIOS Cloud
+HAIOS Agents
+HAIOS Data
+HAIOS Automations
+HAIOS Marketplace (Horizons)
+4.2 HAIOS Core
+El núcleo operativo del ecosistema.
+Componentes principales
+Event Engine
+Decision Engine
+Cognitive Memory Layer (CML)
+Agent Orchestrator
+Business Knowledge Layer
+Rule System
+State Engine
+Funciones clave
+Coordinar todos los módulos
+Tomar decisiones autónomas
+Mantener el estado del negocio
+Ejecutar procesos inteligentes
+Aprender del comportamiento del sistema
+Rol dentro del ecosistema
+HAIOS Core es el cerebro operativo del sistema.
+4.3 HAIOS Apps
+Conjunto de aplicaciones funcionales que viven dentro del ecosistema.
+Incluye
+Aplicaciones internas
+Aplicaciones externas
+Microfrontends
+Módulos de negocio
+Paneles operativos
+Portales de clientes
+Comunicación con HAIOS Core
+Eventos
+APIs
+Webhooks
+Mensajería
+Rol
+Transformar interacción humana en eventos cognitivos.
+4.4 HAIOS Cloud
+La capa de infraestructura administrada del ecosistema.
+Incluye
+Servidores
+Contenedores
+Orquestadores
+CDN
+Balanceadores
+Seguridad
+Observabilidad
+Logs y métricas
+Funciones
+Garantizar disponibilidad
+Escalar automáticamente
+Mantener resiliencia
+Proveer seguridad de extremo a extremo
+Rol
+Asegurar que todo funcione sin fricción.
+4.5 HAIOS Agents
+Agentes cognitivos especializados que ejecutan tareas autónomas.
+Agentes principales
+Daniela IA — Operaciones
+Ejecuta procesos
+Supervisa flujos
+Detecta errores
+Optimiza tareas repetitivas
+Sofía IA — Conocimiento
+Gestiona contenido
+Administra cursos
+Estructura información
+Mantiene la capa semántica
+Nova IA — Innovación
+Propone mejoras
+Detecta oportunidades
+Analiza patrones
+Sugiere nuevas funcionalidades
+Coordinación
+Todos los agentes trabajan bajo el Agent Orchestrator, que asigna tareas según:
+Contexto
+Prioridad
+Autoridad
+Estado del sistema
+Rol
+Los agentes son los operadores autónomos del ecosistema.
+4.6 HAIOS Data
+La capa de datos unificada del ecosistema.
+Incluye
+PocketBase Runtime
+Bases de datos relacionales
+Bases no relacionales
+Data Lake
+Data Warehouse
+Capa semántica
+Modelos de dominio
+Funciones
+Mantener datos consistentes
+Proveer APIs en tiempo real
+Gestionar autenticación
+Administrar archivos
+Registrar eventos
+Rol
+Ser la memoria estructurada del ecosistema.
+4.7 HAIOS Automations
+El motor de automatización del ecosistema.
+Incluye
+Workflows
+Pipelines
+BPMN
+Automatizaciones event‑driven
+Integraciones con terceros
+Tareas programadas
+Funciones
+Ejecutar procesos sin intervención humana
+Conectar sistemas externos
+Orquestar flujos complejos
+Automatizar tareas repetitivas
+Rol
+Convertir decisiones en acciones ejecutables.
+4.8 HAIOS Marketplace (Horizons)
+El Marketplace oficial del ecosistema.
+Incluye
+Módulos listos para instalar
+Plantillas
+Aplicaciones
+Automatizaciones
+Agentes IA
+Integraciones
+Extensiones
+Funciones
+Permitir que desarrolladores publiquen módulos
+Facilitar la expansión del ecosistema
+Acelerar la creación de productos digitales
+Crear una economía interna basada en módulos
+Rol
+Horizons convierte a HAIOS en un ecosistema extensible, colaborativo y escalable.
