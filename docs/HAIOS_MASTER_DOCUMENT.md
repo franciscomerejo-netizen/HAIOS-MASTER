@@ -96,5 +96,15 @@ El modelo IAI define cómo HAIOS genera valor:
 - **Escalabilidad**: crece sin fricción.  
 - **Conocimiento**: aprende del negocio.  
 - **Adaptabilidad**: se ajusta a cambios en tiempo real.  
-
 Este modelo convierte a HAIOS en una infraestructura autónoma capaz de operar negocios digitales de forma continua.
+[ UX Layer ]
+      ↓
+[ App Layer ]
+      ↓
+[ Cognitive Layer ]
+      ↓
+[ Process Layer ]
+      ↓
+[ Data Layer ]
+      ↓
+[ Infra Layer ]
