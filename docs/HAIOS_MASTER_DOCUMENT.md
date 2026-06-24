@@ -217,3 +217,169 @@ Code
       ↓
 [Capa de Infraestructura]
 Cada capa es independiente, modular y reemplazable sin afectar al resto del sistema.
+03-arquitectura-general.md
+3. Arquitectura General del Sistema
+3.1 Visión Arquitectónica
+La arquitectura de HAIOS está diseñada para operar como un ecosistema vivo, modular, cognitivo y escalable.
+Cada componente cumple una función específica dentro del ciclo de operación autónoma.
+HAIOS se organiza en seis capas principales, cada una con responsabilidades claras y límites bien definidos:
+Capa de Experiencia (UX Layer)
+Capa de Aplicaciones (App Layer)
+Capa Cognitiva (Cognitive Layer)
+Capa de Procesos (Process Layer)
+Capa de Datos (Data Layer)
+Capa de Infraestructura (Infrastructure Layer)
+3.2 Diagrama General de Capas
+Code
+┌──────────────────────────────────────────────┐
+│                Capa de Experiencia           │
+│        Interfaces, paneles, portales         │
+└──────────────────────────────────────────────┘
+                     ↓
+┌──────────────────────────────────────────────┐
+│               Capa de Aplicaciones           │
+│    Apps internas, externas, microfrontends   │
+└──────────────────────────────────────────────┘
+                     ↓
+┌──────────────────────────────────────────────┐
+│                 Capa Cognitiva               │
+│  Event Engine · Decision Engine · CML · A.O. │
+└──────────────────────────────────────────────┘
+                     ↓
+┌──────────────────────────────────────────────┐
+│                Capa de Procesos              │
+│     BPMN · Workflows · Pipelines · RPA       │
+└──────────────────────────────────────────────┘
+                     ↓
+┌──────────────────────────────────────────────┐
+│                  Capa de Datos               │
+│   PocketBase · DBs · Data Lake · Semántica   │
+└──────────────────────────────────────────────┘
+                     ↓
+┌──────────────────────────────────────────────┐
+│             Capa de Infraestructura          │
+│   Servidores · Contenedores · Seguridad      │
+└──────────────────────────────────────────────┘
+3.3 Capa de Experiencia (UX Layer)
+La capa de experiencia incluye todas las interfaces con las que interactúan:
+Usuarios
+Operadores
+Clientes
+Agentes IA
+Componentes principales
+Paneles de control
+Dashboards operativos
+Aplicaciones web y móviles
+Interfaces conversacionales
+Portales de clientes
+Principio clave
+La capa UX no contiene lógica de negocio.
+Solo presentación.
+3.4 Capa de Aplicaciones (App Layer)
+Aquí viven las aplicaciones funcionales del ecosistema:
+Módulos de negocio
+Aplicaciones internas
+Aplicaciones externas
+Microfrontends
+Integraciones con terceros
+Comunicación con la capa cognitiva
+Las apps se comunican con HAIOS Core mediante:
+Eventos
+APIs
+Webhooks
+Mensajería
+Responsabilidad
+Transformar acciones del usuario en eventos del sistema.
+3.5 Capa Cognitiva (Cognitive Layer)
+El corazón inteligente del sistema.
+Componentes principales
+Event Engine
+Recibe, clasifica y enruta eventos.
+Decision Engine
+Toma decisiones basadas en:
+Reglas
+Contexto
+Estado
+Memoria
+Aprendizaje
+Cognitive Memory Layer (CML)
+Memoria estructurada para decisiones autónomas.
+Agent Orchestrator
+Coordina agentes internos:
+Daniela IA (operaciones)
+Sofía IA (educación y conocimiento)
+Nova IA (innovación y estrategia)
+Business Awareness Layer
+Entiende:
+Objetivos
+Procesos
+Políticas
+Métricas
+Prioridades
+Rol de la capa cognitiva
+Convertir eventos en decisiones inteligentes.
+3.6 Capa de Procesos (Process Layer)
+Aquí viven los flujos operativos del negocio:
+BPMN
+Workflows
+Pipelines
+Automatizaciones
+Procesos event‑driven
+Integraciones orquestadas
+Modos de operación
+Manual
+Semiautónomo
+Totalmente autónomo
+Rol
+Ejecutar las decisiones generadas por la capa cognitiva.
+3.7 Capa de Datos (Data Layer)
+Incluye:
+PocketBase Runtime
+Bases de datos relacionales
+Bases no relacionales
+Data Lake
+Data Warehouse
+Capa semántica
+Modelos de dominio
+PocketBase como motor principal
+PocketBase provee:
+Autenticación
+Colecciones
+Reglas
+API REST
+API en tiempo real
+Gestión de archivos
+Rol
+Mantener datos consistentes, accesibles y trazables.
+3.8 Capa de Infraestructura (Infrastructure Layer)
+Incluye:
+Servidores
+Contenedores
+Orquestadores
+CDN
+Balanceadores
+Seguridad
+Observabilidad
+Logs y métricas
+Responsabilidades
+Garantizar disponibilidad
+Escalar automáticamente
+Mantener resiliencia
+Proveer seguridad de extremo a extremo
+3.9 Flujo General de Operación
+Un usuario o sistema genera un evento.
+El Event Engine lo recibe.
+El Decision Engine evalúa contexto + reglas + memoria.
+El Agent Orchestrator asigna tareas a agentes IA.
+Los agentes ejecutan acciones en la capa de procesos.
+Los procesos actualizan la capa de datos.
+La infraestructura garantiza operación sin fricción.
+El sistema aprende y mejora continuamente.
+3.10 Arquitectura como Sistema Vivo
+HAIOS funciona como un organismo:
+Percibe (eventos)
+Piensa (cognición)
+Actúa (procesos)
+Recuerda (datos)
+Evoluciona (aprendizaje)
+Esto lo convierte en una plataforma capaz de operar negocios digitales de forma autónoma.
