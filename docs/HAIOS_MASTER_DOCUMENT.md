@@ -1319,3 +1319,125 @@ Prioridad basada en valor
 9.7 Objetivo Final del Roadmap
 Convertir a HAIOS en:
 El Sistema Operativo Cognitivo que permite a cualquier organización operar, aprender y evolucionar de forma autónoma.
+Archivo 09-roadmap-despliegue.md completado
+Este módulo cierra el documento maestro con un glosario técnico completo, coherente y alineado con toda la arquitectura de HAIOS.
+10-glosario.md
+10. Glosario Maestro del Ecosistema HAIOS
+10.1 Visión General
+El glosario maestro define todos los términos técnicos, cognitivos, arquitectónicos y operativos utilizados dentro del ecosistema HAIOS.
+Su propósito es garantizar:
+Claridad
+Coherencia
+Estándares comunes
+Comprensión entre desarrolladores, operadores y agentes IA
+Este glosario es parte esencial del HAIOS Master Document v1.
+10.2 Términos Cognitivos
+Agente Cognitivo
+Entidad autónoma capaz de ejecutar tareas, tomar decisiones y aprender del entorno.
+Agent Orchestrator
+Módulo que coordina y asigna tareas a los agentes cognitivos.
+CML (Cognitive Memory Layer)
+Capa de memoria estructurada que almacena eventos, decisiones, resultados y patrones.
+MACL (Motor de Razonamiento Cognitivo)
+Motor que genera razonamiento, predicciones y análisis contextual.
+CGL (Cognitive Governance Layer)
+Capa de gobernanza que valida decisiones, riesgos, autoridad y coherencia.
+IAI (Infraestructura Autónoma Inteligente)
+Modelo económico y operativo que evalúa valor, costo y eficiencia cognitiva.
+AMS (Adaptive Mutation System)
+Sistema que evalúa el desempeño de agentes y muta sus estrategias.
+SOE (System Optimization Engine)
+Motor que detecta oportunidades de mejora y propone optimizaciones.
+Foresight Runtime
+Sistema de simulación predictiva para evaluar escenarios futuros.
+10.3 Términos Operativos
+Evento
+Registro de algo que ocurre en el sistema.
+Ejemplo: order_created, driver_registered.
+Estado
+Situación actual de una entidad o proceso.
+Ejemplo: “activo”, “pendiente”, “fallido”.
+Proceso
+Secuencia de pasos ejecutados por el sistema o agentes.
+Pipeline
+Flujo automatizado compuesto por múltiples procesos.
+Workflow
+Representación estructurada de un proceso operativo.
+Playbook
+Conjunto de instrucciones para manejar situaciones específicas.
+10.4 Términos de Arquitectura
+HAIOS Core
+Núcleo cognitivo y operativo del ecosistema.
+HAIOS Apps
+Aplicaciones internas y externas que interactúan con el sistema.
+HAIOS Cloud
+Infraestructura administrada que soporta el ecosistema.
+HAIOS Data
+Capa de datos unificada del sistema.
+HAIOS Automations
+Motor de automatización basado en eventos.
+Horizons (Marketplace)
+Ecosistema de módulos, plantillas, agentes e integraciones.
+10.5 Términos de Datos
+Entidad
+Objeto del negocio representado en el modelo de datos.
+Ejemplo: usuario, conductor, curso.
+Colección
+Tabla o conjunto de registros dentro de PocketBase.
+Relación
+Conexión entre entidades.
+Ejemplo: un usuario → muchos cursos.
+Data Lake
+Repositorio de datos sin procesar.
+Data Warehouse
+Repositorio de datos estructurados para análisis.
+Capa Semántica
+Modelo que define significado, relaciones y reglas del negocio.
+10.6 Términos de Seguridad y Gobernanza
+DAS (Decision Authority System)
+Sistema que define niveles de autoridad para agentes y procesos.
+Audit Log
+Registro de todas las acciones ejecutadas en el sistema.
+Trace ID
+Identificador único para rastrear un evento o decisión.
+Risk Score
+Medida del riesgo asociado a una acción o evento.
+Policy
+Regla que define cómo debe comportarse el sistema.
+10.7 Términos de Integración
+Webhook
+Notificación enviada por un sistema externo hacia HAIOS.
+API Gateway
+Punto de entrada para todas las APIs del ecosistema.
+NATS
+Sistema de mensajería utilizado para eventos en tiempo real.
+Microservicio
+Servicio independiente que cumple una función específica.
+10.8 Términos de Agentes
+Daniela IA
+Agente de operaciones.
+Sofía IA
+Agente de conocimiento.
+Nova IA
+Agente de innovación y estrategia.
+Sub‑Agente
+Agente especializado en un dominio específico.
+10.9 Términos de Valor y Economía Interna
+Valor Cognitivo
+Beneficio generado por una acción autónoma.
+Costo Operativo
+Recursos consumidos por un agente o proceso.
+ROI Cognitivo
+Retorno generado por decisiones autónomas.
+Créditos
+Unidad interna para medir valor generado.
+10.10 Términos de Evolución
+Mutación
+Cambio en la estrategia de un agente.
+Promoción
+Incremento de autoridad o rol.
+Fusión
+Unificación de roles o agentes.
+Retiro
+Desactivación de un agente por bajo desempeño.
+✔ Archivo 10-glosario.md completado.
