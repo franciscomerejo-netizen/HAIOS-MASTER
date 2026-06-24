@@ -529,3 +529,210 @@ Acelerar la creación de productos digitales
 Crear una economía interna basada en módulos
 Rol
 Horizons convierte a HAIOS en un ecosistema extensible, colaborativo y escalable.
+5. Runtime, Eventos y Ciclo de Vida
+5.1 Visión General del Runtime Cognitivo
+El runtime cognitivo de HAIOS es la arquitectura operativa que coordina el flujo completo del sistema:
+Ingesta de eventos
+Razonamiento
+Gobernanza
+Ejecución
+Persistencia
+Aprendizaje
+Optimización
+Evolución de agentes
+El runtime no contiene inteligencia propia.
+Su función es orquestar cómo los módulos cognitivos procesan eventos y toman decisiones.
+5.2 Arquitectura del Runtime Cognitivo
+El runtime coordina múltiples subsistemas:
+Code
+┌──────────────────────────────────────────────┐
+│                Runtime Cognitivo             │
+├──────────────────────────────────────────────┤
+│ Event Engine                                  │
+│ Decision Engine                               │
+│ Cognitive Memory Layer (CML)                  │
+│ MACL (Motor de Razonamiento)                  │
+│ IAI (Modelo de Valor)                         │
+│ CGL (Gobernanza Cognitiva)                    │
+│ SOE (Motor de Optimización)                   │
+│ AMS (Mutación Evolutiva)                      │
+│ Foresight Runtime                             │
+│ Execution State Engine                        │
+│ Observabilidad                                │
+└──────────────────────────────────────────────┘
+Fuentes de eventos
+NATS
+HTTP API
+Webhooks
+CRM / ERP
+Aplicaciones
+Agentes IA
+Usuarios
+Identificadores generados
+decision_id
+trace_id
+risk_score
+value_score
+execution_result
+5.3 Ciclo de Vida de un Evento
+Todo comienza con un evento.
+Diez fases lo transforman en acción, memoria y evolución.
+Ejemplo de evento entrante
+json
+{
+  "id": "evt_001",
+  "type": "lead_created",
+  "domain": "sales",
+  "payload": {
+    "leadScore": 92
+  }
+}
+Fase 1 — Ingesta (EVENT RECEIVED)
+Validación de:
+Esquema
+Autenticación
+Marca de tiempo
+Dominio
+Integridad
+Fase 2 — Enriquecimiento (CONTEXT)
+Consulta:
+CML
+Knowledge Graph
+System State
+Genera el Context Bundle.
+Fase 3 — MACL (RAZONAMIENTO)
+Produce:
+Estado esperado
+Confianza
+Autoridad requerida
+Razonamiento
+Impacto esperado
+MACL es el motor de pensamiento del sistema.
+Fase 4 — IAI (VALOR)
+Calcula:
+valueScore
+transformScore
+leverageScore
+dependencyRisk
+Define el valor cognitivo neto de la acción.
+Fase 5 — CGL (GOBERNANZA)
+Evalúa:
+Seguridad
+Integridad
+Autoridad
+Identidad
+Riesgo
+Veredictos posibles
+APROBAR
+MODIFICAR
+ESCALAR
+RECHAZAR
+Fase 6 — Ejecución (ACTION)
+El sistema:
+Ejecuta
+Modifica
+Escala a humano
+O finaliza
+Según el veredicto del CGL.
+Fase 7 — Persistencia (PERSIST)
+Registra:
+DecisionLog
+EventLog
+Ledger
+SystemState
+Todo queda trazado y auditable.
+Fase 8 — Aprendizaje (LEARN)
+La CML registra:
+Evento
+Decisión
+Resultado
+ROI
+Riesgo
+Impacto
+Fase 9 — Optimización (OPTIMIZE)
+El SOE detecta:
+Patrones
+Ineficiencias
+Anomalías
+Genera un OptimizationProposal.
+Fase 10 — Evolución (EVOLVE)
+El AMS evalúa:
+Rendimiento
+Autoridad
+Economía
+Historia
+Puede:
+Promover agentes
+Fusionar roles
+Mutar estrategias
+Retirar agentes
+Siempre validado por CGL.
+5.4 Sistema de Autoridad (DAS)
+Controla quién puede hacer qué dentro del sistema.
+Niveles de autoridad
+Nivel	Nombre	Descripción
+L0	Observador	Solo lectura
+L1	Operador	Acciones simples
+L2	Especialista	Tareas de dominio
+L3	Manager	Modificar pipelines, coordinar agentes
+L4	Ejecutivo	Decisiones estratégicas
+L5	Gobernador	Cambios en la economía interna
+L6	Constitucional	Modificar políticas cognitivas
+5.5 Motor Económico Cognitivo
+Define incentivos internos basados en ROI.
+Fórmula
+Code
+Valor Generado − Costo de Recursos = Valor Cognitivo Neto
+Métricas
+Créditos
+Ganancias
+Gastos
+Eficiencia
+Valor generado
+5.6 Mutación Evolutiva (AMS)
+Evita el estancamiento del sistema.
+Entradas
+Actuación
+Autoridad
+Economía
+Historia
+Salidas
+Actualización de estrategia
+Promoción de roles
+Fusión de roles
+Retiro de roles
+Siempre validado por CGL.
+5.7 Foresight Runtime
+Simula escenarios antes de optimizar.
+Escenarios
+Mejor caso
+Caso esperado
+Peor caso
+Métricas
+ROI
+Riesgo
+Estabilidad
+Adopción
+Complejidad
+5.8 Memoria Cognitiva (CML)
+Cuatro tipos de memoria:
+Episódica — Eventos
+Procedimental — Playbooks
+Estratégica — Patrones
+Institucional — Políticas
+5.9 Knowledge Graph Runtime
+Consultado en tiempo real para decisiones coherentes y explicables.
+Ejemplos:
+“¿Qué principios aplican?”
+“¿Qué políticas afectan este evento?”
+“¿Qué entidades están relacionadas?”
+5.10 Capa de Seguridad Operacional
+Todo evento genera identificadores de traza:
+trace_id
+audit_id
+decision_id
+Todo es:
+Auditable
+Explicable
+Reversible
+Versionado
