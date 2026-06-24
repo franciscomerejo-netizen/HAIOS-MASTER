@@ -108,3 +108,97 @@ Este modelo convierte a HAIOS en una infraestructura autónoma capaz de operar n
 [ Data Layer ]
       ↓
 [ Infra Layer ]
+## 3. Arquitectura General del Sistema
+La arquitectura de HAIOS está diseñada para operar como un ecosistema vivo, modular, cognitivo y escalable. Cada componente cumple una función específica dentro del ciclo de operación autónoma.
+La arquitectura se divide en 6 capas principales:
+1. Capa de Experiencia (UX Layer)
+2. Capa de Aplicaciones (App Layer)
+3. Capa Cognitiva (Cognitive Layer)
+4. Capa de Procesos (Process Layer)
+5. Capa de Datos (Data Layer)
+6. Capa de Infraestructura (Infra Layer)
+---
+## 3.1 Capa de Experiencia (UX Layer)
+Incluye todas las interfaces con las que interactúan usuarios, operadores, clientes y agentes IA.
+Componentes:
+- Dashboards
+- Paneles operativos
+- Aplicaciones web y móviles
+- Interfaces conversacionales
+- Portales de clientes
+Esta capa no contiene lógica de negocio, solo presentación.
+---
+## 3.2 Capa de Aplicaciones (App Layer)
+Aquí viven las aplicaciones funcionales del ecosistema:
+- Módulos de negocio
+- Aplicaciones internas y externas
+- Microfrontends
+- Integraciones con terceros
+Cada aplicación se comunica con la capa cognitiva mediante eventos, APIs y mensajería.
+---
+## 3.3 Capa Cognitiva (Cognitive Layer)
+El corazón inteligente del sistema.
+Componentes:
+### Event Engine
+Recibe, clasifica y enruta eventos.
+### Decision Engine
+Toma decisiones basadas en reglas, contexto, estado y aprendizaje.
+### Cognitive Memory Layer (CML)
+Memoria estructurada para decisiones autónomas.
+### Agent Orchestrator
+Coordina agentes internos:
+- Daniela IA (operaciones)
+- Sofía IA (educación y conocimiento)
+- Nova IA (innovación y estrategia)
+### Business Awareness Layer
+La capa que entiende objetivos, procesos, políticas, métricas y prioridades.
+---
+## 3.4 Capa de Procesos (Process Layer)
+Aquí viven los flujos operativos:
+- BPMN
+- Workflows
+- Pipelines
+- Automatizaciones
+- Procesos event‑driven
+Cada proceso puede ser manual, semiautónomo o totalmente autónomo.
+---
+## 3.5 Capa de Datos (Data Layer)
+Incluye:
+- PocketBase Runtime
+- Bases de datos relacionales y no relacionales
+- Data Lake
+- Data Warehouse
+- Capa semántica
+- Modelos de dominio
+PocketBase es el motor principal para autenticación, colecciones, reglas, APIs, realtime y archivos.
+---
+## 3.6 Capa de Infraestructura (Infra Layer)
+Incluye:
+- Servidores
+- Contenedores
+- Orquestadores
+- CDN
+- Balanceadores
+- Seguridad
+- Observabilidad
+- Logs y métricas
+Garantiza escalabilidad, disponibilidad, resiliencia y seguridad.
+---
+## 3.7 Flujo General de Operación
+1. Un usuario o sistema genera un evento.
+2. El Event Engine lo recibe.
+3. El Decision Engine evalúa contexto + reglas + memoria.
+4. El Agent Orchestrator asigna tareas a agentes IA.
+5. Los agentes ejecutan acciones en la Process Layer.
+6. Los procesos actualizan la Data Layer.
+7. La infraestructura garantiza que todo funcione sin fricción.
+8. El sistema aprende y mejora continuamente.
+---
+## 3.8 Arquitectura como Sistema Vivo
+HAIOS funciona como un organismo:
+- Percibe (eventos)
+- Piensa (cognición)
+- Actúa (procesos)
+- Recuerda (datos)
+- Evoluciona (aprendizaje)
+Esto lo convierte en una plataforma capaz de operar negocios digitales de forma autónoma.
