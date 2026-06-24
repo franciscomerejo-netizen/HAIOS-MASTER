@@ -736,3 +736,157 @@ Auditable
 Explicable
 Reversible
 Versionado
+06-modelo-de-datos.md
+6. Modelo de Datos y Flujo de Información
+6.1 Visión General
+El modelo de datos de HAIOS define cómo se estructura, almacena y mueve la información dentro del ecosistema.
+Su objetivo es garantizar:
+Coherencia
+Trazabilidad
+Escalabilidad
+Capacidad cognitiva
+Integración entre módulos
+Aprendizaje continuo
+El modelo está diseñado para soportar:
+Operación autónoma
+Agentes cognitivos
+Automatizaciones
+Procesos event‑driven
+Evolución del sistema
+6.2 Principios del Modelo de Datos
+El modelo de datos de HAIOS se rige por cinco principios fundamentales:
+1. Unificación del conocimiento
+El conocimiento del negocio vive en un modelo central, no disperso.
+2. Orientación a eventos
+Los cambios en el sistema se registran como eventos, no solo como estados.
+3. Trazabilidad completa
+Cada acción, decisión y cambio de estado deja rastro.
+4. Dominio explícito
+Las entidades representan conceptos reales del negocio.
+5. Escalabilidad semántica
+El modelo puede crecer sin perder significado ni coherencia.
+6.3 Componentes del Modelo de Datos
+El modelo se compone de:
+Entidades de dominio
+Colecciones operativas (PocketBase Runtime)
+Eventos
+Estados
+Relaciones
+Capa semántica
+Cada componente cumple una función específica dentro del ciclo cognitivo.
+6.4 Entidades de Dominio
+Las entidades representan los objetos centrales del negocio.
+Ejemplos de entidades
+Usuarios
+Clientes
+Conductores
+Cursos
+Módulos educativos
+Órdenes
+Transacciones
+Procesos
+Agentes IA
+Cada entidad incluye
+Identificador único
+Atributos principales
+Relaciones
+Historial de cambios
+Rol
+Las entidades son la representación estructurada del negocio.
+6.5 Colecciones Operativas (PocketBase Runtime)
+Las colecciones son las tablas vivas del sistema.
+PocketBase actúa como el runtime de datos en tiempo real.
+Ejemplos de colecciones
+usuarios
+conductores
+cursos
+módulos
+pedidos
+transacciones
+eventos
+proceso_logs
+Funciones de PocketBase
+Almacenar datos estructurados
+Proveer APIs en tiempo real
+Gestionar autenticación
+Registrar actividad del sistema
+Administrar archivos
+Rol
+PocketBase es el motor operativo de datos del ecosistema.
+6.6 Eventos
+Los eventos son registros de cosas que suceden en el sistema.
+Ejemplos
+driver_registered
+course_completed
+order_created
+payment_processed
+process_failed
+agent_action_executed
+Cada evento incluye
+Tipo
+Fecha
+Entidad afectada
+Datos relevantes
+Origen (usuario, sistema, agente IA)
+Los eventos alimentan
+Event Engine
+Decision Engine
+CML
+Rol
+Los eventos son la materia prima del pensamiento cognitivo.
+6.7 Estados
+Los estados representan la situación actual de una entidad o proceso.
+Ejemplos
+Conductor: activo, inactivo, en revisión
+Orden: pendiente, pagada, cancelada
+Curso: en progreso, completado
+Actualización
+Los estados se actualizan como respuesta a eventos.
+Rol
+El estado es la fotografía actual del negocio.
+6.8 Relaciones
+Las relaciones conectan entidades entre sí.
+Ejemplos
+Un cliente → muchas órdenes
+Un conductor → muchos viajes
+Un curso → muchos módulos
+Un agente IA → muchos procesos
+Permiten
+Navegar el modelo
+Construir vistas
+Analizar comportamiento
+Tomar decisiones basadas en contexto
+Rol
+Las relaciones permiten que la IA entienda el negocio como un sistema.
+6.9 Capa Semántica
+Define:
+Significado de cada entidad
+Relaciones entre conceptos
+Reglas del negocio
+Políticas operativas
+Validaciones
+Usada por
+Sofía IA
+Nova IA
+Decision Engine
+Rol
+La capa semántica es el entendimiento profundo del negocio.
+6.10 Flujo de Información en HAIOS
+El flujo sigue un ciclo cognitivo:
+Un usuario o sistema genera un evento.
+El Event Engine lo recibe.
+El Decision Engine consulta estados, reglas y memoria.
+Se ejecuta una acción.
+Se actualizan entidades y estados.
+Se genera un nuevo evento.
+La CML aprende del ciclo.
+Resultado
+HAIOS se convierte en un sistema capaz de operar, aprender y optimizar continuamente.
+6.11 Objetivo del Modelo de Datos
+Permitir que el ecosistema:
+Entienda el negocio
+Recuerde decisiones
+Aprenda de resultados
+Optimice procesos
+Evolucione agentes
+Como un sistema vivo.
