@@ -566,3 +566,127 @@ Memoria cognitiva
 Knowledge Graph Runtime
 Auditoría
 Seguridad operacional
+5. Modelo de Datos y Flujo de Información
+El modelo de datos de HAIOS define cómo se estructura, almacena y mueve la información dentro del ecosistema. Su objetivo es garantizar coherencia, trazabilidad, escalabilidad y capacidad cognitiva sobre los datos del negocio.
+El modelo está diseñado para soportar operación autónoma, agentes cognitivos, automatizaciones y aprendizaje continuo.
+5.1 Principios del Modelo de Datos
+El modelo de datos de HAIOS se rige por los siguientes principios:
+Unificación del conocimiento  
+El conocimiento del negocio vive en un modelo central, no disperso.
+Orientación a eventos  
+Los cambios en el sistema se registran como eventos, no solo como estados.
+Trazabilidad completa  
+Cada acción, decisión y cambio de estado deja rastro.
+Dominio explícito  
+Las entidades representan conceptos reales del negocio.
+Escalabilidad semántica 
+El modelo puede crecer sin perder significado ni coherencia.
+5.2 Componentes del Modelo de Datos
+El modelo se compone de:
+Entidades de dominio
+Colecciones operativas
+Eventos
+Estados
+Relaciones
+Capa semántica
+Cada componente cumple una función específica dentro del ciclo cognitivo.
+5.3 Entidades de Dominio
+Las entidades representan los objetos centrales del negocio.
+Ejemplos:
+Usuarios
+Clientes
+Conductores
+Cursos
+Módulos educativos
+Órdenes
+Transacciones
+Procesos
+Agentes IA
+Cada entidad incluye:
+Identificador único
+Atributos principales
+Relaciones
+Historial de cambios
+5.4 Colecciones Operativas (PocketBase Runtime)
+Las colecciones son las tablas vivas del sistema. PocketBase actúa como runtime de datos en tiempo real.
+Ejemplos:
+users
+drivers
+courses
+modules
+orders
+transactions
+events
+process_logs
+Funciones:
+Almacenar datos estructurados
+Proveer APIs en tiempo real
+Gestionar autenticación
+Registrar actividad del sistema
+5.5 Eventos
+Los eventos son registros de cosas que suceden en el sistema.
+Ejemplos:
+driver_registered
+course_completed
+order_created
+payment_processed
+process_failed
+agent_action_executed
+Cada evento incluye:
+Tipo
+Fecha
+Entidad afectada
+Datos relevantes
+Origen (usuario, sistema, agente IA)
+Los eventos alimentan:
+Event Engine
+Decision Engine
+CML
+5.6 Estados
+Los estados representan la situación actual de una entidad o proceso.
+Ejemplos:
+Conductor: activo, inactivo, en revisión
+Orden: pendiente, pagada, cancelada
+Curso: en progreso, completado
+Los estados se actualizan como respuesta a eventos.
+5.7 Relaciones
+Las relaciones conectan entidades entre sí.
+Ejemplos:
+Un cliente → muchas órdenes
+Un conductor → muchos viajes
+Un curso → muchos módulos
+Un agente IA → muchos procesos
+Permiten:
+Navegar el modelo
+Construir vistas
+Analizar comportamiento
+Tomar decisiones basadas en contexto
+5.8 Capa Semántica
+Define:
+Significado de cada entidad
+Relaciones entre conceptos
+Reglas del negocio
+Políticas operativas
+Validaciones
+Usada por:
+Sofía IA
+Nova IA
+Decision Engine
+5.9 Flujo de Información en HAIOS
+El flujo sigue un ciclo cognitivo:
+Un usuario o sistema genera un evento.
+El Event Engine lo recibe.
+El Decision Engine consulta estados, reglas y memoria.
+Se ejecuta una acción.
+Se actualizan entidades y estados.
+Se genera un nuevo evento.
+La CML aprende del ciclo.
+Este flujo convierte a HAIOS en un sistema capaz de operar, aprender y optimizar continuamente.
+5.10 Objetivo del Modelo de Datos
+Permitir que el ecosistema:
+Entienda el negocio
+Recuerde decisiones
+Aprenda de resultados
+Optimice procesos
+Evolucione agentes
+Como un sistema vivo.
