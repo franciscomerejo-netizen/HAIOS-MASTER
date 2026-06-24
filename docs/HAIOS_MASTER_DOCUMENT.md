@@ -1020,3 +1020,167 @@ CGL aprueba, modifica o rechaza
 Registro en auditoría
 Resultado
 El sistema mantiene control, seguridad y coherencia.
+08-agentes-y-organizacion.md
+8. Agentes Cognitivos y Organización Autónoma
+8.1 Visión General
+Los agentes cognitivos son los operadores autónomos del ecosistema HAIOS.
+Cada agente tiene:
+Un rol definido
+Un dominio de conocimiento
+Un nivel de autoridad
+Un conjunto de habilidades
+Un ciclo de evolución
+Los agentes trabajan bajo la coordinación del Agent Orchestrator, que asigna tareas según:
+Contexto
+Prioridad
+Estado del sistema
+Nivel de autoridad
+Riesgo
+Valor esperado
+Los agentes permiten que HAIOS funcione como una organización digital autónoma.
+8.2 Arquitectura de Agentes Cognitivos
+Code
+┌──────────────────────────────────────────────┐
+│               Agent Orchestrator             │
+├──────────────────────────────────────────────┤
+│ Daniela IA  │ Sofía IA  │ Nova IA            │
+│ (Operaciones)│(Conocimiento)│(Innovación)    │
+├──────────────────────────────────────────────┤
+│   Sub‑agentes especializados por dominio     │
+└──────────────────────────────────────────────┘
+Componentes principales
+Agent Orchestrator
+Agentes principales (Core Agents)
+Sub‑agentes especializados
+Capa de autoridad (DAS)
+Capa de gobernanza (CGL)
+Capa de memoria cognitiva (CML)
+Motor económico (IAI)
+Mutación evolutiva (AMS)
+8.3 Agentes Principales del Ecosistema
+8.3.1 Daniela IA — Agente de Operaciones
+Responsable de:
+Ejecutar procesos
+Supervisar flujos
+Detectar errores
+Optimizar tareas repetitivas
+Coordinar pipelines operativos
+Activar automatizaciones
+Habilidades clave
+Diagnóstico de fallos
+Recuperación automática
+Optimización de procesos
+Gestión de estados operativos
+Rol
+Daniela IA es la operadora principal del ecosistema.
+8.3.2 Sofía IA — Agente de Conocimiento
+Responsable de:
+Gestionar contenido
+Administrar cursos
+Estructurar información
+Mantener la capa semántica
+Curar el conocimiento del negocio
+Habilidades clave
+Clasificación semántica
+Generación de contenido educativo
+Modelado de conocimiento
+Gestión de taxonomías
+Rol
+Sofía IA es la arquitecta del conocimiento.
+8.3.3 Nova IA — Agente de Innovación
+Responsable de:
+Proponer mejoras
+Detectar oportunidades
+Analizar patrones
+Sugerir nuevas funcionalidades
+Evaluar impacto estratégico
+Habilidades clave
+Análisis predictivo
+Exploración de escenarios
+Detección de tendencias
+Innovación continua
+Rol
+Nova IA es la estratega del ecosistema.
+8.4 Sub‑Agentes Especializados
+HAIOS permite crear sub‑agentes especializados por dominio:
+Finanzas
+Ventas
+Educación
+Logística
+Marketing
+Seguridad
+Auditoría
+Optimización
+Análisis de datos
+Cada sub‑agente:
+Tiene un rol específico
+Aprende de su dominio
+Opera bajo un agente principal
+Evoluciona según desempeño
+8.5 Organización Autónoma del Sistema
+HAIOS funciona como una empresa digital autónoma, donde los agentes cumplen roles equivalentes a una organización humana:
+Rol Humano	Agente Cognitivo
+Operador	Daniela IA
+Analista	Sub‑agentes
+Gerente	Agent Orchestrator
+Director	Nova IA
+Jefe de conocimiento	Sofía IA
+Comité de gobernanza	CGL
+Auditor interno	CML + Auditoría
+Comité de estrategia	Foresight + AMS
+8.6 Coordinación entre Agentes
+El Agent Orchestrator asigna tareas según:
+Prioridad del evento
+Nivel de autoridad requerido
+Estado del sistema
+Carga operativa
+Riesgo
+Valor esperado
+Flujo de coordinación
+Code
+Evento → Decision Engine → Agent Orchestrator → Agente IA → Acción
+8.7 Evolución de Agentes (AMS)
+El sistema evalúa continuamente el desempeño de los agentes.
+Entradas
+ROI generado
+Errores cometidos
+Riesgo
+Eficiencia
+Autoridad
+Historial
+Acciones posibles
+Promoción
+Fusión de roles
+Mutación de estrategia
+Retiro del agente
+Rol
+AMS garantiza que los agentes evolucionen como un organismo vivo.
+8.8 Gobernanza Cognitiva (CGL)
+CGL controla:
+Qué agente puede ejecutar qué acción
+Qué nivel de autoridad se requiere
+Qué riesgos son aceptables
+Qué decisiones deben escalarse
+Veredictos
+Aprobar
+Modificar
+Escalar
+Rechazar
+8.9 Motor Económico Cognitivo (IAI)
+Cada agente genera o consume valor.
+Métricas
+Créditos
+Costos
+ROI
+Eficiencia
+Impacto
+Rol
+El motor económico incentiva el comportamiento óptimo.
+8.10 Objetivo de la Organización Autónoma
+Permitir que HAIOS:
+Opere sin supervisión humana
+Aprenda del negocio
+Mejore continuamente
+Evolucione agentes
+Mantenga coherencia y seguridad
+Escale sin fricción
