@@ -1,11 +1,24 @@
-name: Deploy HAIOS Public Live Alpha
+name: HAIOS Public Alpha Gate and Deploy
 
 on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "public-portal/**"
+      - "deployments/deploy-orchestrator.v24.mjs"
+      - "scripts/verify-legal-integrity.v24.mjs"
+      - "docs/compliance/**"
+      - "docs/security/**"
+      - "docs/release/**"
+      - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
 permissions:
   contents: read
-  deployments: write
+
+concurrency:
+  group: haios-public-alpha-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   verify:
@@ -17,6 +30,11 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: "22"
+      - name: Syntax-check V24 control scripts
+        run: |
+          node --check deployments/deploy-orchestrator.v24.mjs
+          node --check scripts/verify-legal-integrity.v24.mjs
+          node --check public-portal/scripts/verify-public-state.mjs
       - name: Verify V24 repository deployment preflight
         run: node deployments/deploy-orchestrator.v24.mjs
       - name: Verify public-state guardrails
@@ -25,9 +43,13 @@ jobs:
         run: node scripts/verify-legal-integrity.v24.mjs
 
   deploy:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
     needs: verify
     runs-on: ubuntu-latest
     environment: production
+    permissions:
+      contents: read
+      deployments: write
     steps:
       - name: Checkout
         uses: actions/checkout@v6
