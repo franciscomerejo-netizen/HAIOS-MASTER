@@ -17,6 +17,8 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: "22"
+      - name: Verify V24 repository deployment preflight
+        run: node deployments/deploy-orchestrator.v24.mjs
       - name: Verify public-state guardrails
         run: cd public-portal && node scripts/verify-public-state.mjs
       - name: Verify legal-document integrity lock
