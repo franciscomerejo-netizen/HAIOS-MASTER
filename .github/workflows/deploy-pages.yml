@@ -48,6 +48,13 @@ jobs:
         run: node scripts/build-public-site.mjs
       - name: Audit emitted public artifact
         run: node scripts/audit-public-dist.mjs
+      - name: Preserve verified public candidate artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: haios-public-alpha-candidate-${{ github.sha }}
+          path: dist/public-alpha
+          if-no-files-found: error
+          retention-days: 14
 
   deploy:
     if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
