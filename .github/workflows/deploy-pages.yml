@@ -6,10 +6,11 @@ on:
     paths:
       - "public-portal/**"
       - "deployments/deploy-orchestrator.v24.mjs"
-      - "scripts/verify-legal-integrity.v24.mjs"
+      - "scripts/**"
       - "docs/compliance/**"
       - "docs/security/**"
       - "docs/release/**"
+      - "docs/governance/**"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
@@ -35,12 +36,18 @@ jobs:
           node --check deployments/deploy-orchestrator.v24.mjs
           node --check scripts/verify-legal-integrity.v24.mjs
           node --check public-portal/scripts/verify-public-state.mjs
+          node --check scripts/build-public-site.mjs
+          node --check scripts/audit-public-dist.mjs
       - name: Verify V24 repository deployment preflight
         run: node deployments/deploy-orchestrator.v24.mjs
       - name: Verify public-state guardrails
         run: cd public-portal && node scripts/verify-public-state.mjs
       - name: Verify legal-document integrity lock
         run: node scripts/verify-legal-integrity.v24.mjs
+      - name: Build explicit public artifact allowlist
+        run: node scripts/build-public-site.mjs
+      - name: Audit emitted public artifact
+        run: node scripts/audit-public-dist.mjs
 
   deploy:
     if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
@@ -53,10 +60,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-      - name: Deploy static portal to Cloudflare Pages
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - name: Re-run all repository gates
+        run: |
+          node deployments/deploy-orchestrator.v24.mjs
+          cd public-portal && node scripts/verify-public-state.mjs
+          cd ..
+          node scripts/verify-legal-integrity.v24.mjs
+          node scripts/build-public-site.mjs
+          node scripts/audit-public-dist.mjs
+      - name: Deploy allowlisted static artifact to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy public-portal --project-name=haios-global-alpha
+          command: pages deploy dist/public-alpha --project-name=haios-global-alpha
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
