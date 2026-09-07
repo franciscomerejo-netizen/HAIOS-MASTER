@@ -19,6 +19,8 @@ jobs:
           node-version: "22"
       - name: Verify public-state guardrails
         run: cd public-portal && node scripts/verify-public-state.mjs
+      - name: Verify legal-document integrity lock
+        run: node scripts/verify-legal-integrity.v24.mjs
 
   deploy:
     needs: verify
