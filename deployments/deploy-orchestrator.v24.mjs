@@ -20,10 +20,10 @@ const requiredFiles = [
   '.github/workflows/deploy-pages.yml'
 ];
 
-function fail(code, message, detail = {}) {
-  console.error(JSON.stringify({
+function emitAndExit(status, code, message, detail = {}, exitCode = 1) {
+  const payload = {
     schema_version: 'haios.deploy-preflight.v24',
-    status: 'BLOCKED',
+    status,
     conflict_code: code,
     message,
     runtime: 'UNKNOWN',
@@ -33,36 +33,73 @@ function fail(code, message, detail = {}) {
     deployment_authorized: false,
     checked_at: new Date().toISOString(),
     ...detail
-  }, null, 2));
-  process.exit(1);
+  };
+  const text = JSON.stringify(payload, null, 2);
+  if (exitCode === 0) console.log(text); else console.error(text);
+  process.exit(exitCode);
 }
 
-for (const relativePath of requiredFiles) {
-  const full = path.join(ROOT, relativePath);
-  if (!fs.existsSync(full)) {
-    fail('FOLDER_MISMATCH', 'Required repository artifact is missing.', { path: relativePath });
+function readJson(relativePath) {
+  const fullPath = path.join(ROOT, relativePath);
+  try {
+    return JSON.parse(fs.readFileSync(fullPath, 'utf8'));
+  } catch (error) {
+    emitAndExit('BLOCKED', 'SCHEMA_CONFLICT', `Invalid JSON: ${relativePath}`, { error: error.message });
   }
 }
 
-const status = JSON.parse(fs.readFileSync(path.join(ROOT, 'public-portal/data/status.json'), 'utf8'));
-if (status.runtime !== 'UNKNOWN' || status.evidence_level !== 'E1' || status.v8 !== 'BLOCKED' || status.runtime_verified !== false) {
-  fail('STATE_CONFLICT', 'Public state violates the frozen V24 publication contract.');
+for (const relativePath of requiredFiles) {
+  const fullPath = path.join(ROOT, relativePath);
+  if (!fs.existsSync(fullPath)) {
+    emitAndExit('BLOCKED', 'FOLDER_MISMATCH', 'Required repository artifact is missing.', { path: relativePath });
+  }
 }
 
-const legalLock = JSON.parse(fs.readFileSync(path.join(ROOT, 'docs/compliance/legal-integrity.lock.json'), 'utf8'));
-if (legalLock.promotion_allowed !== false || legalLock.runtime_verified !== false || legalLock.evidence_level !== 'E1') {
-  fail('EVIDENCE_CONFLICT', 'Legal integrity lock attempts to promote authority.');
+const status = readJson('public-portal/data/status.json');
+
+if (status.schema_version !== 'haios.public-state.v1') {
+  emitAndExit('BLOCKED', 'SCHEMA_CONFLICT', 'Unexpected public-state schema version.');
+}
+if (status.public_mode !== 'READ_ONLY') {
+  emitAndExit('BLOCKED', 'STATE_CONFLICT', 'public_mode must remain READ_ONLY.');
+}
+if (status.runtime?.state !== 'UNKNOWN') {
+  emitAndExit('BLOCKED', 'STATE_CONFLICT', 'Runtime must remain UNKNOWN for Public Alpha candidate.');
+}
+if (status.runtime?.evidence_level !== 'E1') {
+  emitAndExit('BLOCKED', 'EVIDENCE_CONFLICT', 'Evidence level must remain E1 for Public Alpha candidate.');
+}
+if (status.v8?.status !== 'BLOCKED') {
+  emitAndExit('BLOCKED', 'STATE_CONFLICT', 'V8 must remain BLOCKED.');
+}
+if (status.v24_1_transition?.runtime_verified !== false) {
+  emitAndExit('BLOCKED', 'EVIDENCE_CONFLICT', 'runtime_verified must remain false.');
+}
+if (status.country_live_state?.auto_promotes_evidence !== false) {
+  emitAndExit('BLOCKED', 'EVIDENCE_CONFLICT', 'Country live state must not auto-promote evidence.');
 }
 
-console.log(JSON.stringify({
-  schema_version: 'haios.deploy-preflight.v24',
-  status: 'PASS',
-  runtime: 'UNKNOWN',
-  evidence_level: 'E1',
-  v8: 'BLOCKED',
-  runtime_verified: false,
-  deployment_authorized: false,
-  next_gate: 'CLOUDFLARE_SECRETS_AND_MANUAL_WORKFLOW',
-  note: 'PASS means repository preflight only. It does not deploy, certify runtime, or approve legal/security compliance.',
-  checked_at: new Date().toISOString()
-}, null, 2));
+const legalLock = readJson('docs/compliance/legal-integrity.lock.json');
+if (legalLock.schema_version !== 'haios.legal-integrity-lock.v1') {
+  emitAndExit('BLOCKED', 'SCHEMA_CONFLICT', 'Unexpected legal-integrity lock schema version.');
+}
+if (legalLock.status !== 'BORRADOR PARA ABOGADO / NO CERTIFICADO') {
+  emitAndExit('BLOCKED', 'STATE_CONFLICT', 'Legal document must remain non-certified draft.');
+}
+if (
+  legalLock.promotion_allowed !== false ||
+  legalLock.runtime_verified !== false ||
+  legalLock.evidence_level !== 'E1' ||
+  legalLock.legal_reviewed !== false ||
+  legalLock.platform_approved !== false
+) {
+  emitAndExit('BLOCKED', 'EVIDENCE_CONFLICT', 'Legal integrity lock attempts to promote authority.');
+}
+
+emitAndExit(
+  'PASS',
+  null,
+  'Repository preflight passed. No runtime, legal, security, platform, or deployment certification is implied.',
+  { next_gate: 'CLOUDFLARE_SECRETS_AND_MANUAL_WORKFLOW' },
+  0
+);
