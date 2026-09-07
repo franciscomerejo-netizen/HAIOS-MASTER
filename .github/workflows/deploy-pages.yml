@@ -1,0 +1,88 @@
+name: HAIOS Public Alpha Gate and Deploy
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "public-portal/**"
+      - "deployments/deploy-orchestrator.v24.mjs"
+      - "scripts/**"
+      - "docs/compliance/**"
+      - "docs/security/**"
+      - "docs/release/**"
+      - "docs/governance/**"
+      - ".github/workflows/deploy-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: haios-public-alpha-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "22"
+      - name: Syntax-check V24 control scripts
+        run: |
+          node --check deployments/deploy-orchestrator.v24.mjs
+          node --check scripts/verify-legal-integrity.v24.mjs
+          node --check public-portal/scripts/verify-public-state.mjs
+          node --check scripts/build-public-site.mjs
+          node --check scripts/audit-public-dist.mjs
+      - name: Verify V24 repository deployment preflight
+        run: node deployments/deploy-orchestrator.v24.mjs
+      - name: Verify public-state guardrails
+        run: cd public-portal && node scripts/verify-public-state.mjs
+      - name: Verify legal-document integrity lock
+        run: node scripts/verify-legal-integrity.v24.mjs
+      - name: Build explicit public artifact allowlist
+        run: node scripts/build-public-site.mjs
+      - name: Audit emitted public artifact
+        run: node scripts/audit-public-dist.mjs
+      - name: Preserve verified public candidate artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: haios-public-alpha-candidate-${{ github.event.pull_request.head.sha || github.sha }}
+          path: dist/public-alpha
+          if-no-files-found: error
+          retention-days: 30
+
+  deploy:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    needs: verify
+    runs-on: ubuntu-latest
+    environment: production
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "22"
+      - name: Re-run all repository gates
+        run: |
+          node deployments/deploy-orchestrator.v24.mjs
+          cd public-portal && node scripts/verify-public-state.mjs
+          cd ..
+          node scripts/verify-legal-integrity.v24.mjs
+          node scripts/build-public-site.mjs
+          node scripts/audit-public-dist.mjs
+      - name: Deploy allowlisted static artifact to Cloudflare Pages
+        uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4.0.0
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist/public-alpha --project-name=haios-global-alpha
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}

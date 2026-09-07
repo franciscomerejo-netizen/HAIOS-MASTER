@@ -1,0 +1,12 @@
+{
+  "schema_version": "haios.public-state.v1",
+  "generated_at": "2026-09-06T00:00:00Z",
+  "public_mode": "READ_ONLY",
+  "runtime": {"state":"UNKNOWN","evidence_level":"E1","description":"Documented / Visible only"},
+  "baseline_v24": {"status":"CLOSED_FROZEN_IMMUTABLE","canonical_package":"HAIOS_V24_CONTROL_PLANE_P0_P1_COMPLETE.zip","canonical_zip_sha256":"c50e95b5915d965f083956a31cb21ef96de8d3c6614a52e83142be5354badf82","runtime_state":"UNKNOWN","evidence_level":"E1"},
+  "v24_1_transition": {"package":"HAIOS_V24_1_V7_2_LAB_TRANSITION.zip","static_unit_tests":"9/9 PASS","static_scope":"TESTED_LOCAL_LOGIC_ONLY","pocketbase_integration":"NOT_RUN","integration_suite":"NOT_RUN","runtime_verified":false},
+  "v8": {"status":"BLOCKED","reason":"Configuration, policy and software governance. No hardware-block claim is made."},
+  "country_live_state": {"status":"GENERATED","runtime":"UNVERIFIED","auto_promotes_evidence":false},
+  "regulatory": {"status":"DRAFT_FOR_COUNSEL_NOT_CERTIFIED","separation_rule":"LEGAL_REVIEWED != SECURITY_TESTED != RUNTIME_VERIFIED != PLATFORM_APPROVED"},
+  "prohibitions":["No public PocketBase","No write endpoints","No secrets","No production claim","No automatic evidence promotion"]
+}

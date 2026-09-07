@@ -1,0 +1,10 @@
+{
+  "schema":"haios.public-alpha.repo-projection.v1",
+  "source_package":"HAIOS_PUBLIC_LIVE_ALPHA_V1_CICD.zip",
+  "source_package_sha256":"899336121a31490d538f91855eb46c03ea01489f255d1de9b9a5821e537f60af",
+  "projection_status":"GENERATED",
+  "runtime":"UNKNOWN",
+  "evidence_level":"E1",
+  "v8":"BLOCKED",
+  "notes":["Repository layout projection only.","No runtime promotion.","No secrets included."]
+}
