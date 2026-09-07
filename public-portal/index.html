@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>HAIOS Global — Public Live Alpha</title>
-<meta name="description" content="Portal público de solo lectura para el estado documentado de HAIOS Global."/>
+<title>HAIOS Global — Public Alpha Candidate</title>
+<meta name="description" content="Portal público candidato de solo lectura para el estado documentado de HAIOS Global."/>
 <link rel="stylesheet" href="./assets/styles.css"/>
 </head>
 <body>
 <div class="wrap">
-<header><div class="brand">HAIOS GLOBAL</div><div class="badge">PUBLIC LIVE ALPHA · READ ONLY</div></header>
+<header><div class="brand">HAIOS GLOBAL</div><div class="badge">PUBLIC ALPHA CANDIDATE · READ ONLY</div></header>
 <main>
-<section class="hero"><div class="label">No para destruir. Para construir.</div><h1>Una red global.<br/>Identidades locales.<br/>Evidencia primero.</h1><p>Portal público de transparencia para la arquitectura federada HAIOS. Esta versión muestra únicamente información documental y estados permitidos para publicación. No expone secretos, escritura de backend, credenciales ni controles administrativos.</p></section>
-<div class="notice"><strong>Estado público honesto:</strong> BORRADOR PARA ABOGADO / NO CERTIFICADO. El portal no declara producción ni operación verificada. El runtime global permanece UNKNOWN y el nivel probatorio global permanece E1.</div>
+<section class="hero"><div class="label">No para destruir. Para construir.</div><h1>Una red global.<br/>Identidades locales.<br/>Evidencia primero.</h1><p>Portal público candidato de transparencia para la arquitectura federada HAIOS. Esta versión muestra únicamente información documental y estados permitidos para publicación. No expone secretos, escritura de backend, credenciales ni controles administrativos.</p></section>
+<div class="notice"><strong>Estado público honesto:</strong> BORRADOR PARA ABOGADO / NO CERTIFICADO. Este candidato no declara despliegue, producción ni operación verificada. El runtime global permanece UNKNOWN y el nivel probatorio global permanece E1.</div>
 <section><h2>Estado del sistema</h2><div class="grid">
 <div class="card span4"><div class="label">Runtime</div><div class="metric" id="runtime">UNKNOWN</div><div class="state unknown">No verificado en runtime</div></div>
 <div class="card span4"><div class="label">Evidence Level</div><div class="metric" id="evidence">E1</div><div class="state e1">Documentado / Visible</div></div>
@@ -20,13 +20,13 @@
 <div class="card span6"><div class="label">Baseline V24</div><div class="metric" id="baseline">CLOSED / FROZEN</div><div class="small">Hash canónico: <code id="hash"></code></div></div>
 <div class="card span6"><div class="label">V24.1 / V7.2 Lab Transition</div><div class="metric" id="unit">9/9 PASS — local logic only</div><div class="small">PocketBase integration: <span id="pb">NOT RUN</span>. Esto no equivale a RUNTIME_VERIFIED.</div></div>
 </div></section>
-<section><h2>Arquitectura federada</h2><div class="card"><p class="small">Cada país conserva identidad, jurisdicción y contexto propios. La capa global coordina snapshots, evidencia y reconciliación; no sustituye autoridades locales ni convierte consenso multimodelo en evidencia.</p><table><thead><tr><th>País</th><th>Marca país</th><th>Runtime</th><th>Evidencia</th><th>Activos de marca</th></tr></thead><tbody id="countries"></tbody></table></div></section>
+<section><h2>Arquitectura federada</h2><div class="card"><p class="small">Cada entrada de país es únicamente un diseño ilustrativo E0 hasta que exista evidencia específica. La capa global coordina snapshots, evidencia y reconciliación; no sustituye autoridades locales ni convierte consenso multimodelo en evidencia.</p><table><thead><tr><th>País</th><th>Marca país</th><th>Runtime</th><th>Evidencia</th><th>Activos de marca</th></tr></thead><tbody id="countries"></tbody></table></div></section>
 <section><h2>Reglas públicas de confianza</h2><div class="grid">
 <div class="card span4"><div class="label">01</div><h3>Frontend sin autoridad</h3><p class="small">La interfaz no puede declarar <code>verified</code>, <code>operational</code>, <code>connected</code> ni <code>production</code>.</p></div>
-<div class="card span4"><div class="label">02</div><h3>Actualización país</h3><p class="small">Los Country Nodes pueden refrescar información continuamente, pero una actualización no promociona EvidenceLevel ni reescribe historia canónica.</p></div>
+<div class="card span4"><div class="label">02</div><h3>Actualización país</h3><p class="small">Los Country Nodes podrán refrescar información cuando exista una integración aprobada, pero una actualización no promociona EvidenceLevel ni reescribe historia canónica.</p></div>
 <div class="card span4"><div class="label">03</div><h3>Disenso preservado</h3><p class="small">Conflictos de versión, hash, evidencia, jurisdicción o marca quedan abiertos hasta reconciliación y revisión humana.</p></div>
 </div></section>
-<section><h2>Qué todavía no afirmamos</h2><div class="card"><p class="small">No afirmamos que PocketBase V7.2 esté ejecutándose públicamente, que la persistencia <code>/latest</code> esté probada, que V8 esté habilitado, que una auditoría legal o de seguridad externa haya sido aprobada, ni que los activos de Marca País tengan derechos de uso aprobados. Esos estados se publicarán únicamente cuando exista evidencia verificable.</p></div></section>
+<section><h2>Qué todavía no afirmamos</h2><div class="card"><p class="small">No afirmamos que PocketBase V7.2 esté ejecutándose públicamente, que la persistencia <code>/latest</code> esté probada, que V8 esté habilitado, que una auditoría legal o de seguridad externa haya sido aprobada, que este candidato ya esté desplegado en Cloudflare, ni que los activos de Marca País tengan derechos de uso aprobados. Esos estados se publicarán únicamente cuando exista evidencia verificable.</p></div></section>
 </main>
-<footer>HAIOS Global · Public Live Alpha V1 · Read-only transparency portal</footer>
+<footer>HAIOS Global · Public Alpha Candidate V1 · Read-only transparency portal</footer>
 </div><script src="./assets/app.js"></script></body></html>
