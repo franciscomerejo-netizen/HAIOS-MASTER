@@ -1,0 +1,12 @@
+{
+  "schema_version": "haios.legal-integrity-lock.v1",
+  "document_path": "docs/compliance/HAIOS_PRIVACY_LEGAL_REVIEW_QUESTIONNAIRE_V1.md",
+  "sha256": "933024efb1562c90be369da49e9cfe55ab77078f4d3d9c71f653ccd1d1084e7e",
+  "status": "BORRADOR PARA ABOGADO / NO CERTIFICADO",
+  "evidence_level": "E1",
+  "legal_reviewed": false,
+  "runtime_verified": false,
+  "platform_approved": false,
+  "promotion_allowed": false,
+  "notes": "Hash lock for the exact UTF-8 bytes of the legal review questionnaire on public-alpha-candidate. This lock proves file integrity only; it does not prove legal compliance."
+}
