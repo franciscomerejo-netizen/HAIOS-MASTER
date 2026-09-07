@@ -1,16 +1,16 @@
 {
   "schema_version":"haios.public-country-registry.v1",
-  "notice":"Illustrative registry for Alpha. Country nodes are not asserted as operational.",
+  "notice":"Illustrative registry for Alpha. Country nodes are design entries only and are not asserted as deployed or operational.",
   "nodes":[
-    {"iso3":"DOM","name":"República Dominicana","public_name":"Doña Tinajita","brand_status":"UNVERIFIED","runtime_state":"GENERATED","evidence_level":"E1","brand_assets":"UNVERIFIED / NOT_REVIEWED / approved_for_use:false"},
-    {"iso3":"USA","name":"Estados Unidos","brand_status":"UNVERIFIED","runtime_state":"GENERATED","evidence_level":"E1","brand_assets":"UNVERIFIED / NOT_REVIEWED / approved_for_use:false"},
-    {"iso3":"MEX","name":"México","brand_status":"UNVERIFIED","runtime_state":"GENERATED","evidence_level":"E1","brand_assets":"UNVERIFIED / NOT_REVIEWED / approved_for_use:false"},
-    {"iso3":"ESP","name":"España","brand_status":"UNVERIFIED","runtime_state":"GENERATED","evidence_level":"E1","brand_assets":"UNVERIFIED / NOT_REVIEWED / approved_for_use:false"},
-    {"iso3":"COL","name":"Colombia","brand_status":"UNVERIFIED","runtime_state":"GENERATED","evidence_level":"E1","brand_assets":"UNVERIFIED / NOT_REVIEWED / approved_for_use:false"},
-    {"iso3":"BRA","name":"Brasil","brand_status":"UNVERIFIED","runtime_state":"GENERATED","evidence_level":"E1","brand_assets":"UNVERIFIED / NOT_REVIEWED / approved_for_use:false"},
-    {"iso3":"ARG","name":"Argentina","brand_status":"UNVERIFIED","runtime_state":"GENERATED","evidence_level":"E1","brand_assets":"UNVERIFIED / NOT_REVIEWED / approved_for_use:false"},
-    {"iso3":"CHL","name":"Chile","brand_status":"UNVERIFIED","runtime_state":"GENERATED","evidence_level":"E1","brand_assets":"UNVERIFIED / NOT_REVIEWED / approved_for_use:false"},
-    {"iso3":"PER","name":"Perú","brand_status":"UNVERIFIED","runtime_state":"GENERATED","evidence_level":"E1","brand_assets":"UNVERIFIED / NOT_REVIEWED / approved_for_use:false"},
-    {"iso3":"CAN","name":"Canadá","brand_status":"UNVERIFIED","runtime_state":"GENERATED","evidence_level":"E1","brand_assets":"UNVERIFIED / NOT_REVIEWED / approved_for_use:false"}
+    {"iso3":"DOM","name":"República Dominicana","public_name":"Doña Tinajita","brand_status":"UNVERIFIED","runtime_state":"DESIGNED","evidence_level":"E0","brand_assets":"UNVERIFIED / NOT_REVIEWED / approved_for_use:false"},
+    {"iso3":"USA","name":"Estados Unidos","brand_status":"UNVERIFIED","runtime_state":"DESIGNED","evidence_level":"E0","brand_assets":"UNVERIFIED / NOT_REVIEWED / approved_for_use:false"},
+    {"iso3":"MEX","name":"México","brand_status":"UNVERIFIED","runtime_state":"DESIGNED","evidence_level":"E0","brand_assets":"UNVERIFIED / NOT_REVIEWED / approved_for_use:false"},
+    {"iso3":"ESP","name":"España","brand_status":"UNVERIFIED","runtime_state":"DESIGNED","evidence_level":"E0","brand_assets":"UNVERIFIED / NOT_REVIEWED / approved_for_use:false"},
+    {"iso3":"COL","name":"Colombia","brand_status":"UNVERIFIED","runtime_state":"DESIGNED","evidence_level":"E0","brand_assets":"UNVERIFIED / NOT_REVIEWED / approved_for_use:false"},
+    {"iso3":"BRA","name":"Brasil","brand_status":"UNVERIFIED","runtime_state":"DESIGNED","evidence_level":"E0","brand_assets":"UNVERIFIED / NOT_REVIEWED / approved_for_use:false"},
+    {"iso3":"ARG","name":"Argentina","brand_status":"UNVERIFIED","runtime_state":"DESIGNED","evidence_level":"E0","brand_assets":"UNVERIFIED / NOT_REVIEWED / approved_for_use:false"},
+    {"iso3":"CHL","name":"Chile","brand_status":"UNVERIFIED","runtime_state":"DESIGNED","evidence_level":"E0","brand_assets":"UNVERIFIED / NOT_REVIEWED / approved_for_use:false"},
+    {"iso3":"PER","name":"Perú","brand_status":"UNVERIFIED","runtime_state":"DESIGNED","evidence_level":"E0","brand_assets":"UNVERIFIED / NOT_REVIEWED / approved_for_use:false"},
+    {"iso3":"CAN","name":"Canadá","brand_status":"UNVERIFIED","runtime_state":"DESIGNED","evidence_level":"E0","brand_assets":"UNVERIFIED / NOT_REVIEWED / approved_for_use:false"}
   ]
 }
