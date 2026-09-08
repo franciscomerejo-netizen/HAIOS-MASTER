@@ -1,5 +1,4 @@
 name: HAIOS Public Alpha Gate and Deploy
-
 on:
   pull_request:
     branches: [main]
@@ -13,14 +12,11 @@ on:
       - "docs/governance/**"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
-
 permissions:
   contents: read
-
 concurrency:
   group: haios-public-alpha-${{ github.ref }}
   cancel-in-progress: false
-
 jobs:
   verify:
     runs-on: ubuntu-latest
@@ -55,7 +51,6 @@ jobs:
           path: dist/public-alpha
           if-no-files-found: error
           retention-days: 30
-
   deploy:
     if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
     needs: verify
