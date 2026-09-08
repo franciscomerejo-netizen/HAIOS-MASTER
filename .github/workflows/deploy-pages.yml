@@ -79,5 +79,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist/public-alpha --project-name=haios-global-alpha
+          command: pages deploy dist/public-alpha --project-name=haios-cloud
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
