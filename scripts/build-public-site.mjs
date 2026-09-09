@@ -12,6 +12,7 @@ const required = [
   '_redirects',
   'assets/styles.css',
   'assets/app.js',
+  'assets/haios-eyes.svg',
   'data/status.json',
   'data/countries.json'
 ];
